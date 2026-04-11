@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "statuses": [
+    "requested",
+    "implemented",
+    "blocked",
+    "needs-clarification",
+    "rejected",
+    "superseded"
+  ],
+  "items": [
+    {
+      "id": "001",
+      "direction": "frontend-to-backend",
+      "topic": "job submission params",
+      "status": "implemented",
+      "related_decision": "decision-003",
+      "last_update": "2026-04-11"
+    },
+    {
+      "id": "002",
+      "direction": "backend-to-frontend",
+      "topic": "error payload normalization",
+      "status": "requested",
+      "related_decision": "decision-002",
+      "last_update": "2026-04-11"
+    },
+    {
+      "id": "003",
+      "direction": "frontend-to-backend",
+      "topic": "auth header naming",
+      "status": "needs-clarification",
+      "related_decision": "decision-001",
+      "last_update": "2026-04-11"
+    }
+  ]
+}

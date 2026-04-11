@@ -6,24 +6,14 @@ accepted
 ## Topic
 <decision topic>
 
-## Context
-<why this decision is needed>
-
 ## Decision
-<the actual decision, stated clearly>
+<one clear statement>
 
 ## Rationale
-- <reason 1>
-- <reason 2>
+- <reason>
 
 ## Consequences
-### Positive
-- <impact 1>
-- <impact 2>
-
-### Negative
-- <impact 1>
-- <impact 2>
+- <impact>
 
 ## Applies to
 - frontend
@@ -31,8 +21,4 @@ accepted
 - shared contract
 
 ## Related handoffs
-- frontend-to-backend-00x.md
-- backend-to-frontend-00y.md
-
-## Notes
-<optional>
+- <file or none>

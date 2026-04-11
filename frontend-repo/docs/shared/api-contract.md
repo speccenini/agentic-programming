@@ -1,10 +1,5 @@
-# Shared API Contract
+# Shared API Contract (Mirror)
 
-This file describes cross-repo API expectations in human-readable form.
+Authoritative API contract is maintained in backend `openapi.yaml`.
 
-Source of truth:
-- Backend `openapi.yaml` is the authoritative API contract unless overridden by a decision file.
-
-Usage:
-- Keep high-level notes only.
-- Put exact request/response schema updates in `openapi.yaml` and reference them from handoffs.
+Frontend should treat this file as notes only.

@@ -9,11 +9,14 @@ requested
 ## Topic
 <short topic>
 
+## Source handoff
+<none | original handoff filename>
+
 ## Context
-<1-5 lines max: what changed or why this handoff exists>
+<1-4 lines>
 
 ## Requested change
-<exactly what the other side must implement>
+<required action for other side>
 
 ## Contract
 ### Request
@@ -27,26 +30,25 @@ requested
 ```
 
 ## Constraints
-- <constraint 1>
-- <constraint 2>
+- <constraint>
 
-## Files likely impacted
-- <file/path/1>
-- <file/path/2>
+## Files impacted
+- <file/path>
 
-## Validation expected
-- <test/behavior 1>
-- <test/behavior 2>
+## Validation
+- <expected or performed check>
 
 ## Done when
-- <condition 1>
-- <condition 2>
+- <condition>
 
 ## Backward compatibility
-<required / not required / temporary compatibility needed>
+<required | temporary | not required>
 
 ## Related decision(s)
 - decision-00x-<name>.md
 
+## Open points
+<none | list>
+
 ## Notes
-<optional, keep short>
+<optional, max 3 lines>
