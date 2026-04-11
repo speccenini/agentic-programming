@@ -3,6 +3,7 @@
 1. Read:
 - docs/agent-handoffs/decisions/decision-000-ownership.md
 - docs/agent-handoffs/registry.json
+- docs/agent-handoffs/FILENAME-CONVENTION.md
 - relevant docs/agent-handoffs/incoming/*
 
 2. Confirm boundary:

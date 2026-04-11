@@ -1,4 +1,4 @@
-# <direction>-<id>
+# YYYY-MM-DD_HHMM_<direction>_<id>.md
 
 ## Type
 handoff
