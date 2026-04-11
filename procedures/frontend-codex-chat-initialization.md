@@ -1,10 +1,10 @@
-# Guida: Inizializzazione Chat Codex (Frontend)
+# Guide: Codex Chat Initialization (Frontend)
 
-## Obiettivo
-Avviare una nuova chat Codex frontend con contesto minimo ma completo, riducendo token e ambiguità.
+## Goal
+Start a new frontend Codex chat with minimal but complete context, reducing token usage and ambiguity.
 
-## Pre-check (30 secondi)
-Verifica che esistano:
+## Pre-check (30 seconds)
+Make sure these exist:
 - `docs/agent-handoffs/prompts/frontend-agent-prompt.md`
 - `docs/agent-handoffs/TASK-START-CHECKLIST.md`
 - `docs/agent-handoffs/registry.json`
@@ -12,50 +12,50 @@ Verifica che esistano:
 - `docs/agent-handoffs/outgoing/`
 - `docs/shared/api-contract.md`
 
-## Ordine consigliato dei messaggi in chat
-1. Incolla `docs/agent-handoffs/prompts/frontend-agent-prompt.md`.
-2. Incolla `docs/agent-handoffs/TASK-START-CHECKLIST.md`.
-3. Dai il task specifico frontend in modo atomico.
-4. Se esiste handoff in ingresso, incolla solo il file rilevante.
+## Recommended message order in chat
+1. Paste `docs/agent-handoffs/prompts/frontend-agent-prompt.md`.
+2. Paste `docs/agent-handoffs/TASK-START-CHECKLIST.md`.
+3. Provide the frontend-specific task as an atomic request.
+4. If there is an incoming handoff, paste only the relevant file.
 
-## Template task da incollare (frontend)
+## Task template to paste (frontend)
 ```md
-Task frontend (atomico): <titolo breve>
+Frontend task (atomic): <short title>
 
-Contesto:
-- <2-4 punti max>
+Context:
+- <2-4 bullets max>
 
-Input vincolanti:
-- Handoff incoming: <filename o none>
-- Decisioni: decision-000-ownership.md (+ eventuali altre)
-- Contratto API (mirror note): docs/shared/api-contract.md
+Required inputs:
+- Incoming handoff: <filename or none>
+- Decisions: decision-000-ownership.md (+ others if relevant)
+- API contract (mirror notes): docs/shared/api-contract.md
 
-Output richiesto:
-- Implementa solo nel frontend.
-- Se serve lavoro backend, crea handoff in `docs/agent-handoffs/outgoing/` usando template standard.
-- Aggiorna `docs/agent-handoffs/registry.json`.
-- Risposta finale breve con file toccati e stato.
+Required output:
+- Implement frontend-only changes.
+- If backend work is needed, create a handoff in `docs/agent-handoffs/outgoing/` using the standard template.
+- Update `docs/agent-handoffs/registry.json`.
+- Provide a short final response with touched files and status.
 ```
 
-## Regole operative minime
-- Non modificare backend.
-- Non assumere cambi API non documentati.
-- Se ambiguo: `Status: needs-clarification`.
-- Se bloccato: `Status: blocked` con motivo sintetico.
-- Se serve cambio contratto API: aprire handoff verso backend.
+## Minimal operating rules
+- Do not modify backend.
+- Do not assume undocumented API changes.
+- If ambiguous: `Status: needs-clarification`.
+- If blocked: `Status: blocked` with a short reason.
+- If API contract changes are required: open a backend handoff.
 
-## Naming handoff
-Usare sempre:
+## Handoff naming
+Always use:
 - `YYYY-MM-DD_HHMM_frontend-to-backend_<id>.md`
 
-## Chiusura task (check rapido)
-Prima di chiudere, verifica:
-- `registry.json` aggiornato
-- handoff outbound creato se necessario
-- nessuna modifica backend
-- output finale conciso
+## Task closure (quick check)
+Before closing, verify:
+- `registry.json` updated
+- outbound handoff created when needed
+- no backend modifications
+- concise final output
 
-## Anti-pattern da evitare
-- Messaggi lunghi narrativi.
-- Task multi-feature nello stesso handoff.
-- `implemented` senza allineare codice + docs + registry.
+## Anti-patterns to avoid
+- Long narrative messages.
+- Multi-feature tasks in the same handoff.
+- `implemented` without aligning code + docs + registry.

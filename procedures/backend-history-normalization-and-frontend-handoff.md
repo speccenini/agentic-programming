@@ -1,62 +1,62 @@
-# Procedura: Normalizzazione Storico Backend + Handoff per Frontend
+# Procedure: Backend History Normalization + Frontend Handoff
 
-## Obiettivo
-Normalizzare i vecchi handoff markdown del backend nel formato standard e generare, quando serve, un nuovo handoff verso frontend.
+## Goal
+Normalize legacy backend markdown handoffs into the standard format and generate a new frontend handoff when needed.
 
 ## Scope
 - Repository: backend
-- Cartelle coinvolte:
+- Involved folders:
   - `docs/agent-handoffs/incoming/`
   - `docs/agent-handoffs/outgoing/`
   - `docs/agent-handoffs/templates/`
   - `docs/agent-handoffs/registry.json`
 
-## Prerequisiti
-Leggere prima:
+## Prerequisites
+Read first:
 - `docs/agent-handoffs/decisions/decision-000-ownership.md`
 - `docs/agent-handoffs/FILENAME-CONVENTION.md`
 - `docs/agent-handoffs/templates/TEMPLATE-handoff.md`
 - `docs/agent-handoffs/registry.json`
-- `openapi.yaml` (se il cambio è API-related)
+- `openapi.yaml` (if API-related)
 
-## Regola di priorità (token-efficient)
-Normalizzare prima:
-1. file con `status`: `requested`, `blocked`, `needs-clarification`
-2. file più recenti e ancora rilevanti
-3. file che impattano API/contratto
+## Priority rule (token-efficient)
+Normalize first:
+1. files with status: `requested`, `blocked`, `needs-clarification`
+2. recent and still relevant files
+3. files impacting API/contract
 
-Evitare di normalizzare tutto lo storico se non necessario.
+Avoid normalizing the entire history unless necessary.
 
-## Passi operativi
-1. Identificare i file legacy backend da normalizzare.
-2. Per ogni file legacy:
-- mantenere invariato il significato funzionale
-- riscrivere nel formato `TEMPLATE-handoff.md`
-- usare filename standard: `YYYY-MM-DD_HHMM_<direction>_<id>.md`
-- aggiungere in `Notes`: `Legacy source: <old-filename>.md`
-3. Salvare il file normalizzato in `docs/agent-handoffs/outgoing/` o `incoming/` in base alla direzione.
-4. Aggiornare `docs/agent-handoffs/registry.json` con id, direzione, topic, stato, data.
-5. Se il contenuto richiede lavoro frontend:
-- creare nuovo handoff backend->frontend in `docs/agent-handoffs/outgoing/`
-- includere `Files impacted`, `Validation`, `Done when`
-- referenziare `openapi.yaml` se il contratto è cambiato
-6. Copiare manualmente il file in `incoming/` del frontend mantenendo nome invariato.
+## Operational steps
+1. Identify legacy backend files to normalize.
+2. For each legacy file:
+- keep the functional meaning unchanged
+- rewrite using `TEMPLATE-handoff.md`
+- use standard filename: `YYYY-MM-DD_HHMM_<direction>_<id>.md`
+- add in `Notes`: `Legacy source: <old-filename>.md`
+3. Save the normalized file in `docs/agent-handoffs/outgoing/` or `incoming/` based on direction.
+4. Update `docs/agent-handoffs/registry.json` with id, direction, topic, status, and date.
+5. If content requires frontend work:
+- create a new backend->frontend handoff in `docs/agent-handoffs/outgoing/`
+- include `Files impacted`, `Validation`, `Done when`
+- reference `openapi.yaml` if the contract changed
+6. Manually copy the file to frontend `incoming/`, preserving the filename.
 
-## Template rapido per richiesta a Codex (backend)
+## Quick request template for Codex (backend)
 ```md
-Normalizza i file handoff legacy backend in `docs/agent-handoffs/` secondo:
+Normalize legacy backend handoff files in `docs/agent-handoffs/` using:
 - `docs/agent-handoffs/templates/TEMPLATE-handoff.md`
 - `docs/agent-handoffs/FILENAME-CONVENTION.md`
 
-Regole:
-- Non cambiare il significato funzionale.
-- Rinominare con formato: `YYYY-MM-DD_HHMM_<direction>_<id>.md`.
-- Aggiornare `docs/agent-handoffs/registry.json`.
-- Se emerge lavoro lato frontend, genera un nuovo handoff in `docs/agent-handoffs/outgoing/`.
-- Includi in `Notes`: `Legacy source: <vecchio-file>.md`.
+Rules:
+- Do not change functional meaning.
+- Rename with format: `YYYY-MM-DD_HHMM_<direction>_<id>.md`.
+- Update `docs/agent-handoffs/registry.json`.
+- If frontend work emerges, generate a new handoff in `docs/agent-handoffs/outgoing/`.
+- Include in `Notes`: `Legacy source: <old-file>.md`.
 ```
 
-## Criterio di done
-- I file legacy prioritari sono normalizzati nel formato standard.
-- `registry.json` è aggiornato e coerente.
-- Eventuali handoff backend->frontend necessari sono creati e pronti per copia manuale.
+## Done criteria
+- Priority legacy files are normalized in standard format.
+- `registry.json` is updated and consistent.
+- Any required backend->frontend handoffs are created and ready for manual copy.
